@@ -1,5 +1,5 @@
 from alpha_beta import alpha_beta_action
-from state import State, random_action
+from state import State, random_action, argmax
 
 
 def playout(state: State):
@@ -10,10 +10,6 @@ def playout(state: State):
         return 0
 
     return -playout(state.next(random_action(state)))
-
-
-def argmax(collection, key=None):
-    return collection.index(max(collection))
 
 
 def mcs_action(state: State):

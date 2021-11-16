@@ -70,3 +70,7 @@ class State:
 def random_action(state):
     legal_actions = state.legal_actions()
     return legal_actions[random.randint(0, len(legal_actions) - 1)]
+
+
+def argmax(collection, key=None):
+    return collection.index(max(collection))
