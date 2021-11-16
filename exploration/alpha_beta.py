@@ -20,7 +20,6 @@ def alpha_beta(state, alpha, beta):
 def alpha_beta_action(state):
     best_action = 0
     best_score = -float('inf')
-    str = ['', '']
     alpha = -float('inf')
     best_score = -float('inf')
     for action in state.legal_actions():
@@ -28,9 +27,6 @@ def alpha_beta_action(state):
         if score > best_score:
             best_score = score
             best_action = action
-        str[0] = f"{str[0]}{action}, "
-        str[1] = f"{str[1]}{score}, "
-    print('action:', str[0], '\nscore: ', str[1], '\n')
     return best_action
 
 
