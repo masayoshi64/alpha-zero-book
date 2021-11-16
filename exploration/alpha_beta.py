@@ -21,7 +21,6 @@ def alpha_beta_action(state):
     best_action = 0
     best_score = -float('inf')
     alpha = -float('inf')
-    best_score = -float('inf')
     for action in state.legal_actions():
         score = -alpha_beta(state.next(action), -float('inf'), -alpha)
         if score > best_score:
