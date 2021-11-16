@@ -100,7 +100,7 @@ def evaluate_algorithm_of(label, next_actions, game_count):
         else:
             total_point += 1 - play(list(reversed(next_actions)))
 
-        print(f"\rEvaluate {i+1}/{game_count}")
+        print(f"Evaluate {i+1}/{game_count}\r", end='')
     print('')
 
     average_point = total_point / game_count
