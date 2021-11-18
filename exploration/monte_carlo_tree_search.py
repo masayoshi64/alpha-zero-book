@@ -2,7 +2,7 @@ import math
 from alpha_beta import alpha_beta_action
 from monte_carlo import playout
 
-from state import State, random_action, argmax, evaluate_algorithm_of
+from game import State, random_action, argmax, evaluate_algorithm_of
 
 
 class Node:
