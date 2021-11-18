@@ -47,7 +47,7 @@ def dual_network():
     for i in range(DN_RESIDUAL_NUM):
         x = residual_block()(x)
 
-    x - GlobalAveragePooling2D()(x)
+    x = GlobalAveragePooling2D()(x)
 
     p = Dense(
         DN_OUTPUT_SIZE,
