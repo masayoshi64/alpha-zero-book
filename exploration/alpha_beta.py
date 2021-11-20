@@ -1,4 +1,4 @@
-from state import State, random_action
+from game import State, random_action
 
 
 def alpha_beta(state, alpha, beta):
