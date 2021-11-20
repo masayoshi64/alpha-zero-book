@@ -1,5 +1,5 @@
 from alpha_beta import alpha_beta_action
-from state import State, random_action, argmax, evaluate_algorithm_of
+from game import State, random_action, argmax, evaluate_algorithm_of
 
 
 def playout(state: State):
