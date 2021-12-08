@@ -43,6 +43,7 @@ def dual_network():
 
     x = conv(DN_FILTER)(input)
     x = BatchNormalization()(x)
+    x = Activation('relu')(x)
 
     for i in range(DN_RESIDUAL_NUM):
         x = residual_block()(x)

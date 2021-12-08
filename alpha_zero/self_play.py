@@ -54,7 +54,7 @@ def self_play():
         h = play(model)
         history.extend(h)
         print(f'\rSelfPlay {i+1}/{SP_GAME_COUNT}', end='')
-    print()
+    print('')
     write_data(history)
     K.clear_session()
     del model

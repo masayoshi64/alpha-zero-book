@@ -30,7 +30,7 @@ def train_network():
         loss=[
             'categorical_crossentropy',
             'mse'],
-        optimizer='Adam')
+        optimizer='adam')
 
     def step_decay(epoch):
         x = 0.001
@@ -40,12 +40,12 @@ def train_network():
             x = 0.00025
         return x
     lr_decay = LearningRateScheduler(step_decay)
+
     print_callback = LambdaCallback(
         on_epoch_begin=lambda epoch, logs: print(
             f'\rTrain {epoch+1}/{RN_EPOCHS}', end=''))
     model.fit(  # type:ignore
-        xs, [
-            y_policies, y_values], batch_size=128, epochs=RN_EPOCHS, verbose=0, callbacks=[
+        xs, [y_policies, y_values], batch_size=128, epochs=RN_EPOCHS, verbose=0, callbacks=[
             lr_decay, print_callback])
     print('')
     model.save('./model/latest.h5')  # type:ignore

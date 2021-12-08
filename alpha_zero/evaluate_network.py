@@ -40,11 +40,12 @@ def evaluate_network() -> bool:
         if i % 2 == 0:
             total_point += play(next_actions)
         else:
-            total_point += 1 - play(next_actions)
-        print(f'\rEvaluate {i+1}/{EN_GAME_COUNT}')
+            total_point += 1 - play((next_actions[1], next_actions[0]))
+        print(f'\rEvaluate {i+1}/{EN_GAME_COUNT}', end='')
     print('')
     average_point = total_point / EN_GAME_COUNT
     print('AveragePoint', average_point)
+    
     K.clear_session()
     del model0
     del model1
